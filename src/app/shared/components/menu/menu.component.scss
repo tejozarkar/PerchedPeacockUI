@@ -1,10 +1,12 @@
+@import './../../styles/variables.scss';
+
 .menu-icon {
   position: absolute;
   top: 0;
   left: 0;
   width: 50px;
   height: 40px;
-  background: #333;
+  background: $secondary-color;
   border-radius: 0 0 35px 0;
   z-index: 1;
   cursor: pointer;
@@ -22,12 +24,34 @@
   left: 0;
   width: 300px;
   height: 100vh;
-  background: #333;
+  background: $secondary-color;
   .menu{
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: $primary-color;
       .menu-item {
-        padding: 10px 20px;
         width: 100%;
+        color: white;
+        cursor: pointer;
+        &.active{
+          background: $tertiary-color;
+        }
+        &:hover{
+          background: white;
+          a{
+            color: $secondary-color;
+          }
+        }
+        a{
+          padding: 10px 20px;
+          text-decoration: none;
+          width: 100%;
+          height: 100%;
+          display: block;
+          color: white;
+        }
       }
       .close-menu-btn {
           position: absolute;
