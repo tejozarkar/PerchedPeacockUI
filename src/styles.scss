@@ -1,9 +1,9 @@
-@import './app/shared/styles/variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import "./app/shared/styles/variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 body {
   background: #eee;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 input {
@@ -12,6 +12,9 @@ input {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  &.has-error {
+    border: 1px solid red;
+  }
 }
 
 .input-prepend {

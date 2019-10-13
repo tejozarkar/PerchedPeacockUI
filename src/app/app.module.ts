@@ -15,14 +15,20 @@ import { HttpInterceptorService } from './shared/interceptor/http-interceptor.se
 import { CookieService } from './shared/service/cookie.service';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoaderComponent
+    LoaderComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

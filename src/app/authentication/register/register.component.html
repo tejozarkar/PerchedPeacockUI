@@ -2,36 +2,58 @@
 
     <div class="login-card p-3">
         <h3 class="title mb-3">Register</h3>
-        <div class="input-prepend mb-2">
-            <input type="text"
-                   placeholder="Username"
-                   [(ngModel)]="user.username">
-            <fa name="user"></fa>
-        </div>
-        <div class="input-prepend mb-2">
-            <input type="password"
-                   placeholder="Password"
-                   [(ngModel)]="user.password">
-            <fa name="lock"></fa>
-        </div>
-        <div class="input-prepend mb-2">
-            <input type="password"
-                   placeholder="Repeat password">
-            <fa name="lock"></fa>
-        </div>
-        <div class="input-prepend mb-2">
-            <input type="text"
-                   placeholder="Email"
-                   [(ngModel)]="user.email">
-            <fa name="envelope"></fa>
-        </div>
-        <div class="input-prepend mb-3">
-            <input type="text"
-                   placeholder="Mobile"
-                   [(ngModel)]="user.mobile">
-            <fa name="mobile"></fa>
-        </div>
-        <button class="mr-3" (click)="register()">Register</button>
-        <a routerLink="../login">Login</a>
+        <form #registerForm="ngForm"
+              (ngSubmit)="register(registerForm)">
+            <div class="input-prepend mb-2">
+                <input type="text"
+                       placeholder="Username"
+                       name="username"
+                       [class.has-error]="registerForm.controls.username?.status==='INVALID'"
+                       [(ngModel)]="user.username"
+                       required>
+                <fa name="user"></fa>
+            </div>
+            <div class="input-prepend mb-2">
+                <input type="password"
+                       name="password"
+                       [class.has-error]="registerForm.controls.password?.status==='INVALID'"
+                       placeholder="Password"
+                       [(ngModel)]="user.password"
+                       required>
+                <fa name="lock"></fa>
+            </div>
+            <div class="input-prepend mb-2">
+                <input type="password"
+                       name="repeat-password"
+                       [class.has-error]="registerForm.controls.repeat-password?.status==='INVALID'"
+                       placeholder="Repeat password"
+                       ngModel
+                       required>
+                <fa name="lock"></fa>
+            </div>
+            <div class="input-prepend mb-2">
+                <input type="text"
+                       name="email"
+                       [class.has-error]="registerForm.controls.email?.status==='INVALID'"
+                       placeholder="Email"
+                       pattern="^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$"
+                       [(ngModel)]="user.email"
+                       required>
+                <fa name="envelope"></fa>
+            </div>
+            <div class="input-prepend mb-3">
+                <input type="number"
+                       name="mobile"
+                       [class.has-error]="registerForm.controls.mobile?.status==='INVALID'"
+                       pattern="^[1-9]{1}[0-9]{9}$"
+                       placeholder="Mobile"
+                       [(ngModel)]="user.mobile"
+                       required>
+                <fa name="mobile"></fa>
+            </div>
+            <button class="mr-3"
+                    type="submit">Register</button>
+            <a routerLink="../login">Login</a>
+        </form>
     </div>
 </div>

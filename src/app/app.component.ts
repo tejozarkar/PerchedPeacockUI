@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from './shared/service/cookie.service';
 import { Router } from '@angular/router';
 import { LoaderService } from './shared/service/loader.service';
+import { SnackbarService } from './shared/service/snackbar.service';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     let AuthToken = this.cookieService.getCookie('authorization');
-      if(AuthToken===''){
-        this.router.navigate(['auth/login']);
+    if(AuthToken===''){
+      this.router.navigate(['auth/login']);
     }
     this.loaderService.loaderState.subscribe(
       state => this.showLoader  = state.show

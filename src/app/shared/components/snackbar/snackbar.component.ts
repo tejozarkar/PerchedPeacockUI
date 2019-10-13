@@ -16,7 +16,7 @@ import { SnackbarService } from '../../service/snackbar.service';
         animate('150ms cubic-bezier(0, 0, 0.2, 1)', style({
           transform: 'translate(-50%, 0%) scale(1)',
           opacity: 1,
-          bottom: '20px'
+          bottom: '50px'
         })),
       ]),
       transition(':leave', [
