@@ -1,12 +1,46 @@
 <div class="parking-space-wrap">
     <div class="space-details-wrap">
         <div class="space-details">
-            {{parkingSpace.name}}
-            <div *ngFor="let vehicle of vehicles"
-                (click)="selectVehicle(vehicle)">
-                {{vehicle.model}}
+            <h3 class="text-primary border-bottom pb-3 mb-3">Parking Details</h3>
+            <h6 class="text-secondary mb-2">Name: <span class="text-primary">{{parkingSpace.name}}</span> </h6>
+            <h6 class="text-secondary mb-2 pb-3 border-bottom">Cost per hour: <span
+                      class="text-primary">₹{{parkingSpace.costPerHour}}</span> </h6>
+
+            <p class="text-secondary">Select Vehicle</p>
+            <div *ngFor="let vehicle of vehicles;index as i"
+                 (click)="selectVehicle(i)"
+                 class="vehicle-card mb-2 selected"
+                 [class.selected]="selectedVehicle==i">
+                <h6 class="text-secondary mb-2">
+                    Model:
+                    <span class="text-primary">
+                        {{vehicle.model}}
+                    </span>
+                </h6>
+                <h6 class="text-secondary mb-2">
+                    Licence:
+                    <span class="text-primary">
+                        {{vehicle.licence}}
+                    </span>
+                </h6>
+                <h6 class="text-secondary mb-2">
+                    Color:
+                    <span class="text-primary">
+                        {{vehicle.color}}
+                    </span>
+                </h6>
             </div>
-            <button (click)="book()">Book</button>
+            <div class="text-tertiary not-available"
+                 *ngIf="!availableParkingLot&&vehicles">
+                Not Available for {{vehicles[selectedVehicle].type==1?'two':'four'}} wheeler
+            </div>
+            <button (click)="book()"
+                    class="book-btn"
+                    [disabled]="!availableParkingLot">Book</button>
+
+            <fa name="close"
+                class="close-details-btn"
+                (click)="detailsClose()"></fa>
         </div>
     </div>
 </div>

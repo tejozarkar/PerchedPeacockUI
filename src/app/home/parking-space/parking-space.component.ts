@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ParkingSpace } from '../../shared/model/ParkingSpace';
-import { Address } from '../../shared/model/Address';
-import { GeoLocation } from '../../shared/model/GeoLocation';
 import { VehicleService } from 'src/app/shared/service/vehicle.service';
 import { Vehicle } from 'src/app/shared/model/vehicle';
 import { Booking } from 'src/app/shared/model/Booking';
@@ -25,7 +23,7 @@ export class ParkingSpaceComponent implements OnInit {
   @Output() onDetailsClose = new EventEmitter();
 
   public vehicles: Vehicle[];
-  public selectedVehicle: Vehicle;
+  public selectedVehicle = 0;
   public availableParkingLot: ParkingLot;
 
   constructor(private readonly vehicleService: VehicleService,
@@ -37,25 +35,30 @@ export class ParkingSpaceComponent implements OnInit {
     this.vehicleService.getVehicles()
       .subscribe(vehicles => {
         this.vehicles = vehicles
-        console.log(vehicles);
-
-        this.parkingService.getAvailableParkingLots(this.parkingSpace.id, vehicles[0].type)
-          .subscribe(parkingLot => this.availableParkingLot = parkingLot);
+        if(vehicles){
+          this.checkParkingAvailability(vehicles[0]);
+        }
       });
+  }
+
+  private checkParkingAvailability(vehicle: Vehicle){
+    this.parkingService.getAvailableParkingLots(this.parkingSpace.id, vehicle.type)
+    .subscribe(parkingLot => this.availableParkingLot = parkingLot);
   }
 
   public detailsClose() {
     this.onDetailsClose.emit();
   }
 
-  public selectVehicle(vehicle: Vehicle) {
-    this.selectedVehicle = vehicle;
+  public selectVehicle(index: number) {
+    this.selectedVehicle = index;
+    this.checkParkingAvailability(this.vehicles[this.selectedVehicle]);
   }
 
   public book() {
     const currentDayTime = this.datePipe.transform(new Date(), 'dd-M-yyyy hh:mm:ss ');
     let booking = new Booking();
-    booking.vehicleId = this.selectedVehicle.id;
+    booking.vehicleId = this.vehicles[this.selectedVehicle].id;
     booking.lotId = this.availableParkingLot.id;
     booking.checkin = currentDayTime
     this.bookingService.createBooking(booking)

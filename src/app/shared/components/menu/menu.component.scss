@@ -6,7 +6,7 @@
   left: 0;
   width: 50px;
   height: 40px;
-  background: $secondary-color;
+  background: $primary-color;
   border-radius: 0 0 35px 0;
   z-index: 1;
   cursor: pointer;
@@ -24,7 +24,7 @@
   left: 0;
   width: 300px;
   height: 100vh;
-  background: $secondary-color;
+  background: $primary-color;
   .menu{
       position: relative;
       display: flex;
@@ -41,7 +41,7 @@
         &:hover{
           background: white;
           a{
-            color: $secondary-color;
+            color: $primary-color;
           }
         }
         a{
