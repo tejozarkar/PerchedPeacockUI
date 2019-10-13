@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="search-box input-prepend">
+    <input placeholder="Search location"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="off"
+           type="text"
+           #search
+           [formControl]="searchControl"
+           (mapClicked)="onMapClicked()">
+    <fa name="search"></fa>
+</div>
+
+<agm-map [latitude]="currentGeoLocation.latitude"
+         [longitude]="currentGeoLocation.longitude"
+         [zoom]="17"
+         (mapClick)="mapClick($event)">
+    <div *ngFor="let parkingSpace of parkingSpaces">
+        <agm-marker [latitude]="parkingSpace.address.geoLocation.latitude"
+                    [longitude]="parkingSpace.address.geoLocation.longitude"
+                    (click)="parkingSpaceSelected()"></agm-marker>
+
+    </div>
+</agm-map>
+
+<app-add-parking-space *ngIf="showSpaceDetails"
+                       [geoLocation]="geoLocation"
+                       (onAddingParkingSpace)="onAddingParkingSpace($event)"
+                       (onDetailsClose)="showSpaceDetails = false"></app-add-parking-space>

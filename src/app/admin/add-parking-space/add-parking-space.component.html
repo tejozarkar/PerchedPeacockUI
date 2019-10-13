@@ -1,0 +1,14 @@
+<div class="parking-space-wrap">
+    <div class="space-details-wrap">
+        <div class="space-details">
+                <input type="text" placeholder="Parking Space Name" [(ngModel)]="parkingSpace.name">
+                <input type="text" placeholder="Cost Per Hour" [(ngModel)]="parkingSpace.costPerHour">
+                <input type="text" placeholder="Two Wheeler Parking Lots" [(ngModel)]="parkingSpace.twoWheelerParkingCount">
+                <input type="text" placeholder="Foour Wheeler Parking Lots" [(ngModel)]="parkingSpace.fourWheelerParkingCount">
+                <!-- <input type="text" placeholder="address1" [(ngModel)]="parkingSpace.fourWheelerParkingCount"> -->
+                <!-- <input type="text" placeholder="address2" [(ngModel)]="parkingSpace.twoWheelerParkingCount"> -->
+                <button (click)="addParkingSpace()">Add Parking Space</button>
+                <fa name="close" (click)="detailsClose()"></fa>
+        </div>
+    </div>
+</div>

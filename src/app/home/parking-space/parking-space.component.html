@@ -1,0 +1,12 @@
+<div class="parking-space-wrap">
+    <div class="space-details-wrap">
+        <div class="space-details">
+            {{parkingSpace.name}}
+            <div *ngFor="let vehicle of vehicles"
+                (click)="selectVehicle(vehicle)">
+                {{vehicle.model}}
+            </div>
+            <button (click)="book()">Book</button>
+        </div>
+    </div>
+</div>

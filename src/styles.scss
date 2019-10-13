@@ -1,0 +1,12 @@
+.input-prepend {
+  position: relative;
+  input {
+    padding-left: 30px!important;
+  }
+  fa {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0%, -50%);
+  }
+}

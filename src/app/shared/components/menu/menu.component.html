@@ -1,0 +1,17 @@
+<div class="menu-icon" (click)="onMenuIconClick()">
+    <fa name="bars"></fa>
+</div>
+
+<div class="side-menu" *ngIf="showMenu">
+    <div class="menu">
+        <div class="menu-item">
+            <a routerLink="/home" class="menu-item">Home</a>
+        </div>
+        <div class="menu-item">
+            <a routerLink="/vehicles" class="menu-item">Vehicles</a>
+        </div>
+        <div class="close-menu-btn" (click)="onMenuIconClick()  ">
+            <fa name="times"></fa>
+        </div>
+    </div>
+</div>

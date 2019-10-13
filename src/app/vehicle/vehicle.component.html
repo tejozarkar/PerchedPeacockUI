@@ -1,0 +1,24 @@
+<input type="text"
+       placeholder="Licence"
+       [(ngModel)]="vehicle.licence">
+<input type="text"
+       placeholder="Model"
+       [(ngModel)]="vehicle.model">
+<input type="radio"
+       [(ngModel)]="vehicle.type"
+       value=1>2 Wheeler
+<input type="radio"
+       [(ngModel)]="vehicle.type"
+       value=2>4 Wheeler
+<input type="text"
+       placeholder="color"
+       [(ngModel)]="vehicle.color">
+<input type="text"
+       placeholder="weight"
+       [(ngModel)]="vehicle.weight">
+
+<button (click)="addVehicle()">Add Vehicle</button>
+
+<div *ngFor="let vehicle of vehicles">
+    {{vehicle.model}}
+</div>
