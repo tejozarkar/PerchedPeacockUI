@@ -1,12 +1,37 @@
+@import './app/shared/styles/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+  background: #eee;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  width: 100%;
+  background: rgb(245, 244, 244);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
 .input-prepend {
   position: relative;
   input {
-    padding-left: 30px!important;
+    padding-left: 30px !important;
   }
   fa {
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translate(0%, -50%);
+    color: #9c9b9b;
   }
+}
+
+button {
+  border: none;
+  background: rgb(0, 128, 79);
+  color: white;
+  border-radius: 5px;
+  padding: 8px 20px;
 }

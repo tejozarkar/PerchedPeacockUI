@@ -1,7 +1,37 @@
-<input type="text" placeholder="Username" [(ngModel)]="user.username">
-<input type="text" placeholder="Password" [(ngModel)]="user.password">
-<input type="text" placeholder="Repeat password">
-<input type="text" placeholder="Email" [(ngModel)]="user.email">
-<input type="text" placeholder="Mobile" [(ngModel)]="user.mobile">
-<button (click)="register()">Register</button>
-<a routerLink="../login">Login</a>
+<div class="login-wrap">
+
+    <div class="login-card p-3">
+        <h3 class="title mb-3">Register</h3>
+        <div class="input-prepend mb-2">
+            <input type="text"
+                   placeholder="Username"
+                   [(ngModel)]="user.username">
+            <fa name="user"></fa>
+        </div>
+        <div class="input-prepend mb-2">
+            <input type="password"
+                   placeholder="Password"
+                   [(ngModel)]="user.password">
+            <fa name="lock"></fa>
+        </div>
+        <div class="input-prepend mb-2">
+            <input type="password"
+                   placeholder="Repeat password">
+            <fa name="lock"></fa>
+        </div>
+        <div class="input-prepend mb-2">
+            <input type="text"
+                   placeholder="Email"
+                   [(ngModel)]="user.email">
+            <fa name="envelope"></fa>
+        </div>
+        <div class="input-prepend mb-3">
+            <input type="text"
+                   placeholder="Mobile"
+                   [(ngModel)]="user.mobile">
+            <fa name="mobile"></fa>
+        </div>
+        <button class="mr-3" (click)="register()">Register</button>
+        <a routerLink="../login">Login</a>
+    </div>
+</div>
