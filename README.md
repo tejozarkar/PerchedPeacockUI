@@ -22,16 +22,19 @@
 
 **Instructions for starting project on local:**
 - **Frontend**
-1.git clone https://github.com/Tejas-Ozarkar/PerchedPeacockUI
-2.npm install
-3.ng serve
+    1. git clone https://github.com/Tejas-Ozarkar/PerchedPeacockUI
+    2. npm install
+    3. ng serve
 - **Backend**
-1.git clone https://github.com/Tejas-Ozarkar/PerchedPeacockAPI
-2.mvn install
-3.run
+    1. git clone https://github.com/Tejas-Ozarkar/PerchedPeacockAPI
+    2. mvn install
+    3. run
 
 **Instructions for build deployment package:**
 - **Frontend**
-1.ng build --prod
+    1. ng build --prod
 - **Backend**
-1.mvn package
+    1. mvn package
+
+
+![admin](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/admin.png)
