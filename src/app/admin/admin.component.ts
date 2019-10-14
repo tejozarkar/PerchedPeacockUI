@@ -34,8 +34,10 @@ export class AdminComponent implements OnInit {
     this.parkingSpaces = [];
     //set google maps defaults
     this.zoom = 4;
-    this.currentGeoLocation.latitude = 39.8282;
-    this.currentGeoLocation.longitude = -98.5795;
+    this.currentGeoLocation.latitude = 12.916023;
+    this.currentGeoLocation.longitude = 77.6379239;
+
+    this.findNearBySpaces();
 
     //create search FormControl
     this.searchControl = new FormControl();

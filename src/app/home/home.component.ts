@@ -37,14 +37,15 @@ export class HomeComponent implements OnInit {
     this.parkingSpaces = [];
     //set google maps defaults
     this.zoom = 4;
-    this.currentGeoLocation.latitude = 39.8282;
-    this.currentGeoLocation.longitude = -98.5795;
+    this.currentGeoLocation.latitude = 12.916023;
+    this.currentGeoLocation.longitude = 77.6379239;
 
     //create search FormControl
     this.searchControl = new FormControl();
 
     //set current position
     this.setCurrentPosition();
+    this.findNearBySpaces();
 
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
