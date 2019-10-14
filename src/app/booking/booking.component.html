@@ -1,1 +1,33 @@
-<p>booking works!</p>
+<div class="container-fluid">
+    <div *ngIf="bookings.length"
+         class="bookings-wrap row">
+
+        <div class="booking-side-bar col-lg-4 m-0 p-3 pt-5">
+            <h5 class="text-primary">Bookings</h5>
+            <div *ngFor="let booking of bookings;index as i"
+                 class="booking-card mb-2"
+                 [class.selected]="selectedBookingIndex===i"
+                 (click)="selectBooking(i)">
+                {{booking.vehicle.model}} parked at {{booking.parkingSpace.name}}
+                <h6 class="text-secondary mb-2">Checkin: <span class="text-primary">{{booking.booking.checkin}}</span> </h6>
+                <button *ngIf="!booking.booking.checkout&&selectedBookingIndex===i"
+                        (click)="checkout(booking.booking)">checkout</button>
+                <div *ngIf="booking.booking.checkout">
+                    <h6 class="text-secondary mb-2">Checkout: <span class="text-primary">{{booking.booking.checkout}}</span>
+                    </h6>
+                    <h6 class="text-secondary mb-2">Amount: <span class="text-primary">{{booking.booking.amount}}</span> </h6>
+                </div>
+            </div>
+        </div>
+
+        <agm-map [latitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.latitude"
+                 [longitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.longitude"
+                 [zoom]="17"
+                 class="col-lg-8 p-0">
+            <agm-marker [latitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.latitude"
+                        [longitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.longitude">
+            </agm-marker>
+
+        </agm-map>
+    </div>
+</div>
