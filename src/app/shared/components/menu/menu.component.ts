@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from '../../service/cookie.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,9 +10,14 @@ export class MenuComponent implements OnInit {
 
   public showMenu = false;
 
-  constructor() { }
+  public isAdmin = false;
+
+  constructor(private readonly cookieService: CookieService) { }
 
   ngOnInit() {
+    if(parseInt(this.cookieService.getCookie('userType'))===1){
+      this.isAdmin = true;
+    }
   }
 
   onMenuIconClick():void{
