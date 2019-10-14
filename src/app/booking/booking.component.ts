@@ -23,7 +23,8 @@ export class BookingComponent implements OnInit {
 
   private getBookings() {
     this.bookingService.getBookings()
-      .subscribe(bookings => this.bookings = bookings);
+      .subscribe(bookings => this.bookings = bookings.reverse());
+      
   }
 
   public selectBooking(index: number): void {

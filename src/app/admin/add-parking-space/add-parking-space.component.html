@@ -1,14 +1,24 @@
 <div class="parking-space-wrap">
     <div class="space-details-wrap">
-        <div class="space-details">
-                <input type="text" placeholder="Parking Space Name" [(ngModel)]="parkingSpace.name">
-                <input type="text" placeholder="Cost Per Hour" [(ngModel)]="parkingSpace.costPerHour">
-                <input type="text" placeholder="Two Wheeler Parking Lots" [(ngModel)]="parkingSpace.twoWheelerParkingCount">
-                <input type="text" placeholder="Foour Wheeler Parking Lots" [(ngModel)]="parkingSpace.fourWheelerParkingCount">
-                <!-- <input type="text" placeholder="address1" [(ngModel)]="parkingSpace.fourWheelerParkingCount"> -->
-                <!-- <input type="text" placeholder="address2" [(ngModel)]="parkingSpace.twoWheelerParkingCount"> -->
-                <button (click)="addParkingSpace()">Add Parking Space</button>
-                <fa name="close" (click)="detailsClose()"></fa>
+        <div class="space-details p-3 ">
+            <h3 class="text-primary mb-3 pb-3 border-bottom">Add new parking space</h3>
+            <input type="text"
+                   placeholder="Parking Space Name"
+                   [(ngModel)]="parkingSpace.name">
+            <input type="text"
+                   placeholder="Cost Per Hour"
+                   [(ngModel)]="parkingSpace.costPerHour">
+            <input type="text"
+                   placeholder="Number of Two Wheeler Parking Lots"
+                   [(ngModel)]="parkingSpace.twoWheelerParkingCount">
+            <input type="text"
+                   placeholder="Number of Four Wheeler Parking Lots"
+                   [(ngModel)]="parkingSpace.fourWheelerParkingCount">
+            <button (click)="addParkingSpace()"
+                    class="add-btn">Add Parking Space</button>
+            <fa name="close"
+                class="close-details-btn"
+                (click)="detailsClose()"></fa>
         </div>
     </div>
 </div>

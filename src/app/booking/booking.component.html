@@ -8,6 +8,9 @@
                  class="booking-card mb-2"
                  [class.selected]="selectedBookingIndex===i"
                  (click)="selectBooking(i)">
+                 <span *ngIf="!booking.booking.checkout" class="badge badge-primary">Ongoing</span>
+                 <span *ngIf="booking.booking.checkout" class="badge badge-secondary">Completed</span>
+                 <br>
                 {{booking.vehicle.model}} parked at {{booking.parkingSpace.name}}
                 <h6 class="text-secondary mb-2">Checkin: <span class="text-primary">{{booking.booking.checkin}}</span> </h6>
                 <button *ngIf="!booking.booking.checkout&&selectedBookingIndex===i"

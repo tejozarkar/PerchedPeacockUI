@@ -7,6 +7,7 @@ import { ParkingLot } from 'src/app/shared/model/ParkingLot';
 import { ParkingService } from '../../shared/service/parking.service';
 import { DatePipe } from '@angular/common';
 import { BookingService } from '../../shared/service/booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-parking-space',
@@ -29,7 +30,8 @@ export class ParkingSpaceComponent implements OnInit {
   constructor(private readonly vehicleService: VehicleService,
     private readonly parkingService: ParkingService,
     private readonly bookingService: BookingService,
-    private readonly datePipe: DatePipe) { }
+    private readonly datePipe: DatePipe,
+    private readonly router: Router) { }
 
   ngOnInit() {
     this.vehicleService.getVehicles()
@@ -62,7 +64,7 @@ export class ParkingSpaceComponent implements OnInit {
     booking.lotId = this.availableParkingLot.id;
     booking.checkin = currentDayTime
     this.bookingService.createBooking(booking)
-      .subscribe(resp => console.log(resp));
+      .subscribe(resp => this.router.navigate(['booking']));
   }
 
 
