@@ -7,31 +7,36 @@
                       class="text-primary">₹{{parkingSpace.costPerHour}}</span> </h6>
 
             <p class="text-secondary">Select Vehicle</p>
-            <div *ngFor="let vehicle of vehicles;index as i"
-                 (click)="selectVehicle(i)"
-                 class="vehicle-card mb-2 selected"
-                 [class.selected]="selectedVehicle==i">
-                <h6 class="text-secondary mb-2">
-                    Model:
-                    <span class="text-primary">
-                        {{vehicle.model}}
-                    </span>
-                </h6>
-                <h6 class="text-secondary mb-2">
-                    Licence:
-                    <span class="text-primary">
-                        {{vehicle.licence}}
-                    </span>
-                </h6>
-                <h6 class="text-secondary mb-2">
-                    Color:
-                    <span class="text-primary">
-                        {{vehicle.color}}
-                    </span>
-                </h6>
+            <div *ngIf="!vehicles.length">
+                <p class="text-tertiary">Vehicles not found. Please add vehicle to proceed</p>
             </div>
-            <div class="text-tertiary not-available"
-                 *ngIf="!availableParkingLot&&vehicles">
+            
+            <div *ngFor="let vehicle of vehicles;index as i"
+            (click)="selectVehicle(i)"
+            class="vehicle-card mb-2 selected"
+            [class.selected]="selectedVehicle==i">
+            <h6 class="text-secondary mb-2">
+                Model:
+                <span class="text-primary">
+                    {{vehicle.model}}
+                </span>
+            </h6>
+            <h6 class="text-secondary mb-2">
+                Licence:
+                <span class="text-primary">
+                    {{vehicle.licence}}
+                </span>
+            </h6>
+            <h6 class="text-secondary mb-2">
+                Color:
+                <span class="text-primary">
+                    {{vehicle.color}}
+                </span>
+            </h6>
+        </div>
+        <a routerLink="/vehicle">Add Vehicle</a>
+        <div class="text-tertiary not-available"
+                 *ngIf="!availableParkingLot&&vehicles.length">
                 Not Available for {{vehicles[selectedVehicle].type==1?'two':'four'}} wheeler
             </div>
             <button (click)="book()"

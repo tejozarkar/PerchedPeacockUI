@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../shared/model/vehicle';
 import { VehicleService } from '../shared/service/vehicle.service';
+import { Router } from '@angular/router';
+import { SnackbarService } from '../shared/service/snackbar.service';
 
 @Component({
   selector: 'app-vehicle',
@@ -12,7 +14,10 @@ export class VehicleComponent implements OnInit {
   public vehicle = new Vehicle();
   public vehicles: Vehicle[];
 
-  constructor(private readonly vehicleService: VehicleService) { }
+  constructor(
+    private readonly router: Router,
+    private readonly vehicleService: VehicleService,
+    private readonly snackbar: SnackbarService) { }
 
   ngOnInit() {
     this.vehicleService.getVehicles()
@@ -22,8 +27,9 @@ export class VehicleComponent implements OnInit {
   public addVehicle() {
     this.vehicleService.addVehicle(this.vehicle)
       .subscribe(resp => {
-        console.log(resp);
-      })
+        this.snackbar.show('Vehicle added');
+        this.router.navigate(['/home']);
+      });
   }
 
 }

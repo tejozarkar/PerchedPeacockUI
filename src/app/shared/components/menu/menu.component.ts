@@ -18,6 +18,7 @@ export class MenuComponent implements OnInit {
     private readonly cookieService: CookieService) { }
 
   ngOnInit() {
+    console.log('userType',this.cookieService.getCookie('userType'));
     if (parseInt(this.cookieService.getCookie('userType')) === 1) {
       this.isAdmin = true;
     }

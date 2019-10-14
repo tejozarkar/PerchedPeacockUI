@@ -2,18 +2,6 @@
 
     <div class="vehicle-card p-3">
         <h3 class="title mb-3">Add New Vehicle</h3>
-        <!-- <div class="input-prepend mb-2">
-                <input type="text"
-                       placeholder="username"
-                       [(ngModel)]="user.username">
-                <fa name="user"></fa>
-            </div>
-            <div class="input-prepend mb-3">
-                <input type="password"
-                       placeholder="password"
-                       [(ngModel)]="user.password">
-                <fa name="lock"></fa>
-            </div> -->
         <div class="input-prepend mb-2">
             <input type="text"
                    placeholder="Licence"
@@ -25,8 +13,12 @@
                    [(ngModel)]="vehicle.model">
         </div>
         <div class="input-prepend mb-2">
-            <select [(ngModel)]="vehicle.type">
-                <option value="1" selected>2 Wheeler</option>
+            <select [(ngModel)]="vehicle.type"
+                    placeholder="Select vehicle type">
+                <option [value]="undefined"
+                        selected disabled>Select vehicle type</option>
+                <option value="1"
+                        >2 Wheeler</option>
                 <option value="2">4 Wheeler</option>
             </select>
         </div>
@@ -37,7 +29,7 @@
         </div>
         <div class="input-prepend mb-2">
             <input type="text"
-                   placeholder="weight"
+                   placeholder="Weight in kg"
                    [(ngModel)]="vehicle.weight">
         </div>
         <button (click)="addVehicle()">Add Vehicle</button>

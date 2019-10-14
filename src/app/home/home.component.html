@@ -16,10 +16,17 @@
        <div *ngFor="let parkingSpace of parkingSpaces">
               <agm-marker [latitude]="parkingSpace.address.geoLocation.latitude"
                           [longitude]="parkingSpace.address.geoLocation.longitude"
+                          iconUrl="assets/parking.png"
                           (markerClick)="parkingSpaceSelected(parkingSpace)"></agm-marker>
 
        </div>
 </agm-map>
+
+<div class="instruction badge badge-info">
+       <fa name="exclamation-circle"></fa>
+       Click on marker to select parking space
+</div>
+
 
 <app-parking-space *ngIf="showSpaceDetails"
                    [parkingSpace]="selectedParkingSpace"

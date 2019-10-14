@@ -17,10 +17,16 @@
     <div *ngFor="let parkingSpace of parkingSpaces">
         <agm-marker [latitude]="parkingSpace.address.geoLocation.latitude"
                     [longitude]="parkingSpace.address.geoLocation.longitude"
+                    iconUrl="assets/parking.png"
                     (click)="parkingSpaceSelected()"></agm-marker>
 
     </div>
 </agm-map>
+
+<div class="instruction badge badge-info">
+    <fa name="exclamation-circle"></fa>
+    Click anywhere on map to add new parking space
+</div>
 
 <app-add-parking-space *ngIf="showSpaceDetails"
                        [geoLocation]="geoLocation"

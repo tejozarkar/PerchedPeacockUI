@@ -19,3 +19,13 @@ agm-map {
     color: rgb(156, 155, 155);
   }
 }
+
+
+.instruction {
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

@@ -28,7 +28,8 @@
                  [zoom]="17"
                  class="col-lg-8 p-0">
             <agm-marker [latitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['latitude']"
-                        [longitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['longitude']">
+                        [longitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['longitude']"
+                        iconUrl="assets/parking.png">
             </agm-marker>
 
         </agm-map>
