@@ -37,4 +37,11 @@
     1. mvn package
 
 
-![admin](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/admin.png)
+**Project Architecture**
+
+![architecture](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/architecture.png)
+
+
+**Database structure**
+
+![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/database.png)
