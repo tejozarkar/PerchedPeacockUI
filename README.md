@@ -48,7 +48,7 @@
 
 **Database structure**
 
-![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/database.png)
+![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/database-structure.png)
 
 
 **Authentication Pages**
