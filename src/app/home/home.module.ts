@@ -5,16 +5,17 @@ import { HomeComponent } from './home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { MenuComponent } from '../shared/components/menu/menu.component';
+import {  } from '../shared/components/menu/menu.component';
 import { ParkingSpaceComponent } from './parking-space/parking-space.component';
 import { VehicleService } from '../shared/service/vehicle.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from '../shared/interceptor/http-interceptor.service';
 import { BookingService } from '../shared/service/booking.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [HomeComponent, MenuComponent, ParkingSpaceComponent],
+  declarations: [HomeComponent, ParkingSpaceComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -22,6 +23,7 @@ import { BookingService } from '../shared/service/booking.service';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFontAwesomeModule,
+    SharedModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyD2h0Bnj_6F8V7BzrT1eAEzzcagWQm2LEs",
       libraries: ["places"]

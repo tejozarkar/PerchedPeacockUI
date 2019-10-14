@@ -2,20 +2,34 @@
     <div class="space-details-wrap">
         <div class="space-details p-3 ">
             <h3 class="text-primary mb-3 pb-3 border-bottom">Add new parking space</h3>
-            <input type="text"
-                   placeholder="Parking Space Name"
-                   [(ngModel)]="parkingSpace.name">
-            <input type="text"
-                   placeholder="Cost Per Hour"
-                   [(ngModel)]="parkingSpace.costPerHour">
-            <input type="text"
-                   placeholder="Number of Two Wheeler Parking Lots"
-                   [(ngModel)]="parkingSpace.twoWheelerParkingCount">
-            <input type="text"
-                   placeholder="Number of Four Wheeler Parking Lots"
-                   [(ngModel)]="parkingSpace.fourWheelerParkingCount">
-            <button (click)="addParkingSpace()"
-                    class="add-btn">Add Parking Space</button>
+            <form #newParkingForm="ngForm" (ngSubmit)="addParkingSpace(newParkingForm)">
+                <input type="text"
+                       placeholder="Parking Space Name"
+                       name="name"
+                       [class.has-error]="newParkingForm.controls.name?.status==='INVALID'"
+                       [(ngModel)]="parkingSpace.name"
+                       required>
+                <input type="number"
+                       placeholder="Cost Per Hour"
+                       name="costPerHour"
+                       [class.has-error]="newParkingForm.controls.costPerHour?.status==='INVALID'"
+                       [(ngModel)]="parkingSpace.costPerHour"
+                       required>
+                <input type="number"
+                       name="twoWheelerCount"
+                       [class.has-error]="newParkingForm.controls.twoWheelerCount?.status==='INVALID'"
+                       placeholder="Number of Two Wheeler Parking Lots"
+                       [(ngModel)]="parkingSpace.twoWheelerParkingCount"
+                       required>
+                <input type="number"
+                       name="fourWheelerCount"
+                       [class.has-error]="newParkingForm.controls.fourWheelerCount?.status==='INVALID'"
+                       placeholder="Number of Four Wheeler Parking Lots"
+                       [(ngModel)]="parkingSpace.fourWheelerParkingCount"
+                       required>
+                <button type="submit"
+                        class="add-btn">Add Parking Space</button>
+            </form>
             <fa name="close"
                 class="close-details-btn"
                 (click)="detailsClose()"></fa>
