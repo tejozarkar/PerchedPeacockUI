@@ -34,23 +34,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.parkingSpaces = [{
-      name: 'space1',
-      address: {
-        geoLocation: {
-          latitude: 39.8282,
-          longitude: -98.5795
-        }
-      }
-    }, {
-      name: 'space1',
-      address: {
-        geoLocation: {
-          latitude: 39.8282,
-          longitude: -97.5795
-        }
-      }
-    }];
+    this.parkingSpaces = [];
     //set google maps defaults
     this.zoom = 4;
     this.currentGeoLocation.latitude = 39.8282;
