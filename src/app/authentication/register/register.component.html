@@ -1,6 +1,6 @@
-<div class="login-wrap">
+<div class="register-wrap">
 
-    <div class="login-card p-3">
+    <div class="register-card p-3">
         <h3 class="title mb-3">Register</h3>
         <form #registerForm="ngForm"
               (ngSubmit)="register(registerForm)">
@@ -8,7 +8,7 @@
                 <input type="text"
                        placeholder="Username"
                        name="username"
-                       [class.has-error]="registerForm.controls.username?.status=='INVALID'"
+                       [class.has-error]="findHasError(registerForm,'username')"
                        [(ngModel)]="user.username"
                        required>
                 <fa name="user"></fa>
@@ -16,7 +16,7 @@
             <div class="input-prepend mb-2">
                 <input type="password"
                        name="password"
-                       [class.has-error]="registerForm.controls.password?.status=='INVALID'"
+                       [class.has-error]="findHasError(registerForm,'password')"
                        placeholder="Password"
                        [(ngModel)]="user.password"
                        required>
@@ -25,7 +25,7 @@
             <div class="input-prepend mb-2">
                 <input type="password"
                        name="repeat-password"
-                       [class.has-error]="registerForm.controls['repeat-password']?.status=='INVALID'"
+                       [class.has-error]="findHasError(registerForm,'repeat-password')"
                        placeholder="Repeat password"
                        ngModel
                        required>
@@ -34,7 +34,7 @@
             <div class="input-prepend mb-2">
                 <input type="text"
                        name="email"
-                       [class.has-error]="registerForm.controls.email?.status=='INVALID'"
+                       [class.has-error]="findHasError(registerForm,'email')"
                        placeholder="Email"
                        pattern="^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$"
                        [(ngModel)]="user.email"
@@ -44,7 +44,7 @@
             <div class="input-prepend mb-3">
                 <input type="number"
                        name="mobile"
-                       [class.has-error]="registerForm.controls.mobile?.status=='INVALID'"
+                       [class.has-error]="findHasError(registerForm,'mobile')"
                        pattern="^[1-9]{1}[0-9]{9}$"
                        placeholder="Mobile"
                        [(ngModel)]="user.mobile"

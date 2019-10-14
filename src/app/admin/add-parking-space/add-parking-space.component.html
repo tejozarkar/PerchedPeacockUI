@@ -6,24 +6,24 @@
                 <input type="text"
                        placeholder="Parking Space Name"
                        name="name"
-                       [class.has-error]="newParkingForm.controls.name?.status==='INVALID'"
+                       [class.has-error]="findHasError(newParkingForm,'name')"
                        [(ngModel)]="parkingSpace.name"
                        required>
                 <input type="number"
                        placeholder="Cost Per Hour"
                        name="costPerHour"
-                       [class.has-error]="newParkingForm.controls.costPerHour?.status==='INVALID'"
+                       [class.has-error]="findHasError(newParkingForm,'costPerHour')"
                        [(ngModel)]="parkingSpace.costPerHour"
                        required>
                 <input type="number"
                        name="twoWheelerCount"
-                       [class.has-error]="newParkingForm.controls.twoWheelerCount?.status==='INVALID'"
+                       [class.has-error]="findHasError(newParkingForm,'twoWheelerCount')"
                        placeholder="Number of Two Wheeler Parking Lots"
                        [(ngModel)]="parkingSpace.twoWheelerParkingCount"
                        required>
                 <input type="number"
                        name="fourWheelerCount"
-                       [class.has-error]="newParkingForm.controls.fourWheelerCount?.status==='INVALID'"
+                       [class.has-error]="findHasError(newParkingForm,'fourWheelerCount')"
                        placeholder="Number of Four Wheeler Parking Lots"
                        [(ngModel)]="parkingSpace.fourWheelerParkingCount"
                        required>

@@ -20,6 +20,7 @@ export class RegisterComponent {
     private readonly router: Router) { }
 
   public register(form: NgForm): void {
+    console.log(form);
     if(form.controls['password'].value !== form.controls['repeat-password'].value){
       this.snackbar.show('Passwords do not match','danger');
       return;
@@ -30,6 +31,10 @@ export class RegisterComponent {
         this.router.navigate(['auth/login']);
       }, err => this.snackbar.show('err.message', 'danger'));
     }
+  }
+
+  public findHasError(form: NgForm, control: string){
+    return form.controls[control].touched&&form.controls[control].status=='INVALID';
   }
 
 }

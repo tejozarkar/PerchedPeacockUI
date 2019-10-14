@@ -1,17 +1,28 @@
 @import './../../../app/shared/styles/variables.scss';
-.login-wrap {
+.register-wrap {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  .login-card {
+  .register-card {
     width: 30%;
     background: white;
     padding: 20px;
     border-radius: 10px;
     .title{
         color: $primary-color;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .register-wrap {
+    .register-card {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
     }
   }
 }

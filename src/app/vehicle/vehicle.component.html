@@ -2,37 +2,56 @@
 
     <div class="vehicle-card p-3">
         <h3 class="title mb-3">Add New Vehicle</h3>
-        <div class="input-prepend mb-2">
-            <input type="text"
-                   placeholder="Licence"
-                   [(ngModel)]="vehicle.licence">
-        </div>
-        <div class="input-prepend mb-2">
-            <input type="text"
-                   placeholder="Model"
-                   [(ngModel)]="vehicle.model">
-        </div>
-        <div class="input-prepend mb-2">
-            <select [(ngModel)]="vehicle.type"
-                    placeholder="Select vehicle type">
-                <option [value]="undefined"
-                        selected disabled>Select vehicle type</option>
-                <option value="1"
-                        >2 Wheeler</option>
-                <option value="2">4 Wheeler</option>
-            </select>
-        </div>
-        <div class="input-prepend mb-2">
-            <input type="text"
-                   placeholder="color"
-                   [(ngModel)]="vehicle.color">
-        </div>
-        <div class="input-prepend mb-2">
-            <input type="text"
-                   placeholder="Weight in kg"
-                   [(ngModel)]="vehicle.weight">
-        </div>
-        <button (click)="addVehicle()">Add Vehicle</button>
+        <form #vehicleForm="ngForm"
+              (ngSubmit)="addVehicle(vehicleForm)">
+            <div class="input-prepend mb-2">
+                <input type="text"
+                       placeholder="Licence"
+                       name="licence"
+                       [class.has-error]="findHasError(vehicleForm,'licence')"
+                       [(ngModel)]="vehicle.licence"
+                       required>
+            </div>
+            <div class="input-prepend mb-2">
+                <input type="text"
+                       placeholder="Model"
+                       name="model"
+                       [class.has-error]="findHasError(vehicleForm,'model')"
+                       [(ngModel)]="vehicle.model"
+                       required>
+            </div>
+            <div class="input-prepend mb-2">
+                <select [(ngModel)]="vehicle.type"
+                        name="vehicleType"
+                        [class.has-error]="findHasError(vehicleForm,'vehicleType')"
+                        placeholder="Select vehicle type"
+                        required>
+                    <option [value]="undefined"
+                            selected
+                            disabled>Select vehicle type</option>
+                    <option value="1">2 Wheeler</option>
+                    <option value="2">4 Wheeler</option>
+                </select>
+            </div>
+            <div class="input-prepend mb-2">
+                <input type="text"
+                       placeholder="color"
+                       name="color"
+                       [class.has-error]="findHasError(vehicleForm,'color')"
+                       [(ngModel)]="vehicle.color"
+                       required>
+            </div>
+            <div class="input-prepend mb-2">
+                <input type="number"
+                       placeholder="Weight in kg"
+                       name="weight"
+                       [class.has-error]="findHasError(vehicleForm,'weight')"
+                       [(ngModel)]="vehicle.weight"
+                       required>
+            </div>
+            <button type="submit">Add Vehicle</button>
+        </form>
+
     </div>
 
 </div>

@@ -46,4 +46,8 @@ export class AddParkingSpaceComponent implements OnInit {
     this.onDetailsClose.emit();
   }
 
+  public findHasError(form: NgForm, control: string){
+    return form.controls[control].touched&&form.controls[control].status=='INVALID';
+  }
+
 }
