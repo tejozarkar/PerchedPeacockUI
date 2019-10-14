@@ -3,6 +3,10 @@
 **Live Project URL**: 
  [http://perchedpeacock.s3-website.us-east-2.amazonaws.com](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/)
 
+ **User Following Credentials for Admin Access:**
+    **Username:** admin
+    **Password:** admin
+
 **Project Stack:**
 - **Frontend:** Angular 8
 - **Backend:** Java(Spring Boot)
@@ -45,3 +49,20 @@
 **Database structure**
 
 ![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/database.png)
+
+
+**Authentication Pages**
+
+![auth](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/auth.png)
+
+
+**User Pages**
+
+![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/user.png)
+
+
+**Admin Pages**
+
+![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/admin.png)
+
+
