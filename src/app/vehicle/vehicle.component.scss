@@ -15,3 +15,14 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .vehicle-wrap {
+    .vehicle-card {
+      padding-top: 40px!important;
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+    }
+  }
+}

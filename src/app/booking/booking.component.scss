@@ -1,24 +1,35 @@
-@import './../shared/styles/variables.scss';
+@import "./../shared/styles/variables.scss";
 
-.bookings-wrap{
-    width: 100vw;
-    height: 100vh;
-    .booking-side-bar{
-        width: 100%;
-        height: 100%;
-        overflow-y: auto;
-        background: white;
-        .booking-card{
-            cursor: pointer;
-            border: 2px solid #eee;
-            border-radius: 5px;
-            padding: 10px;
-            &.selected{
-              border: 2px solid $secondary-color;
-            }
-          }
+.bookings-wrap {
+  width: 100vw;
+  height: 100vh;
+  .booking-side-bar {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: white;
+    .booking-card {
+      cursor: pointer;
+      border: 2px solid #eee;
+      border-radius: 5px;
+      padding: 10px;
+      &.selected {
+        border: 2px solid $secondary-color;
+      }
     }
+  }
 }
-agm-map{
-    height: 100vh;
+agm-map {
+  height: 100vh;
+}
+
+@media only screen and (max-width: 800px) {
+  .bookings-wrap {
+    .booking-side-bar {
+      height: 50vh;
+    }
+  }
+  agm-map {
+    height: 50vh;
+  }
 }

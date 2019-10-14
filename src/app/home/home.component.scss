@@ -20,12 +20,27 @@ agm-map {
   }
 }
 
-
 .instruction {
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   bottom: 20px;
   left: 20px;
   padding: 10px 20px;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  .search-box {
+    top: 60px;
+    left: 10px;
+    input {
+      width: calc(100vw - 20px);
+    }
+  }
+  .instruction {
+    bottom: 10px;
+    left: 10px;
+    width: calc(100vw - 20px);
+    white-space: pre-wrap;
+  }
 }
