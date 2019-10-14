@@ -58,11 +58,11 @@
 
 **User Pages**
 
-![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/user.png)
+![user](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/user.png)
 
 
 **Admin Pages**
 
-![database](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/admin.png)
+![admin](http://perchedpeacock.s3-website.us-east-2.amazonaws.com/images/admin-pages.png)
 
 
