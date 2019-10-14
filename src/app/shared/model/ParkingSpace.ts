@@ -4,7 +4,8 @@ export class ParkingSpace {
 
     id?: string;
     name: string;
-    costPerHour?: number;
+    costPerHourTwoWheeler?: number;
+    costPerHourFourWheeler?: number;
     twoWheelerParkingCount?: number;
     fourWheelerParkingCount?: number;
     address: Address;

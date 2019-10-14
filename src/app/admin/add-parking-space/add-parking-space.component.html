@@ -10,10 +10,16 @@
                        [(ngModel)]="parkingSpace.name"
                        required>
                 <input type="number"
-                       placeholder="Cost Per Hour"
-                       name="costPerHour"
-                       [class.has-error]="findHasError(newParkingForm,'costPerHour')"
-                       [(ngModel)]="parkingSpace.costPerHour"
+                       placeholder="Cost per hour for two wheeler"
+                       name="costPerHourTwoWheeler"
+                       [class.has-error]="findHasError(newParkingForm,'costPerHourTwoWheeler')"
+                       [(ngModel)]="parkingSpace.costPerHourTwoWheeler"
+                       required>
+                <input type="number"
+                       placeholder="Cost per hour for four wheeler"
+                       name="costPerHourFourWheeler"
+                       [class.has-error]="findHasError(newParkingForm,'costPerHourFourWheeler')"
+                       [(ngModel)]="parkingSpace.costPerHourFourWheeler"
                        required>
                 <input type="number"
                        name="twoWheelerCount"

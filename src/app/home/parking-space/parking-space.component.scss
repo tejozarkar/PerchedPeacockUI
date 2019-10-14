@@ -11,6 +11,7 @@
   .space-details-wrap {
     position: relative;
     .space-details {
+      overflow-y:auto;
       padding: 10px;
       position: absolute;
       right: 0;
