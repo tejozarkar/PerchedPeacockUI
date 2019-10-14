@@ -22,6 +22,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "baseHref" : "/",
+            "deployUrl": "/",
             "aot": false,
             "assets": [
               "src/favicon.ico",

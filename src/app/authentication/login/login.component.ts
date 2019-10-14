@@ -27,14 +27,17 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user)
       .subscribe(resp => {
         this.snackbar.show('Login successful');
-        if (resp.hasOwnProperty('token')) {
-          this.cookieService.setCookie('authorization', resp['token'], 1);
-          this.router.navigate(['home']);
+        if (resp['authToken'].hasOwnProperty('token')) {
+          this.cookieService.setCookie('authorization', resp['authToken']['token'], 1);
+          this.cookieService.setCookie('userType', resp['userType'], 1);
+          if (resp['userType'] == 1) {
+            this.router.navigate(['admin']);
+          } else {
+            this.router.navigate(['home']);
+          }
         }
-      },err=>{
+      }, err => {
         this.snackbar.show(err.message, 'danger');
       });
   }
-
-
 }

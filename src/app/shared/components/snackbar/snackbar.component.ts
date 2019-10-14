@@ -36,10 +36,10 @@ import { SnackbarService } from '../../service/snackbar.service';
 export class SnackbarComponent implements OnInit, OnDestroy {
 
 
-  private show = false;
-  private message: string = 'This is snackbar';
-  private type: string = 'success';
-  private snackbarSubscription: Subscription;
+  public show = false;
+  public message: string = 'This is snackbar';
+  public type: string = 'success';
+  public snackbarSubscription: Subscription;
 
   constructor(private snackbarService: SnackbarService) { }
 

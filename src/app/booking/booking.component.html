@@ -23,12 +23,12 @@
             </div>
         </div>
 
-        <agm-map [latitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.latitude"
-                 [longitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.longitude"
+        <agm-map [latitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['latitude']"
+                 [longitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['longitude']"
                  [zoom]="17"
                  class="col-lg-8 p-0">
-            <agm-marker [latitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.latitude"
-                        [longitude]="bookings[selectedBookingIndex].parkingSpace.address.geoLocation.longitude">
+            <agm-marker [latitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['latitude']"
+                        [longitude]="bookings[selectedBookingIndex]['parkingSpace']['address']['geoLocation']['longitude']">
             </agm-marker>
 
         </agm-map>
