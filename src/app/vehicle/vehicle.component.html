@@ -1,24 +1,76 @@
-<input type="text"
-       placeholder="Licence"
-       [(ngModel)]="vehicle.licence">
-<input type="text"
-       placeholder="Model"
-       [(ngModel)]="vehicle.model">
-<input type="radio"
-       [(ngModel)]="vehicle.type"
-       value=1>2 Wheeler
-<input type="radio"
-       [(ngModel)]="vehicle.type"
-       value=2>4 Wheeler
-<input type="text"
-       placeholder="color"
-       [(ngModel)]="vehicle.color">
-<input type="text"
-       placeholder="weight"
-       [(ngModel)]="vehicle.weight">
+<div class="vehicle-wrap">
 
-<button (click)="addVehicle()">Add Vehicle</button>
+    <div class="vehicle-card p-3">
+        <h3 class="title mb-3">Add New Vehicle</h3>
+        <!-- <div class="input-prepend mb-2">
+                <input type="text"
+                       placeholder="username"
+                       [(ngModel)]="user.username">
+                <fa name="user"></fa>
+            </div>
+            <div class="input-prepend mb-3">
+                <input type="password"
+                       placeholder="password"
+                       [(ngModel)]="user.password">
+                <fa name="lock"></fa>
+            </div> -->
+        <div class="input-prepend mb-2">
+            <input type="text"
+                   placeholder="Licence"
+                   [(ngModel)]="vehicle.licence">
+        </div>
+        <div class="input-prepend mb-2">
+            <input type="text"
+                   placeholder="Model"
+                   [(ngModel)]="vehicle.model">
+        </div>
+        <div class="input-prepend mb-2">
+            <select [(ngModel)]="vehicle.type">
+                <option value="1" selected>2 Wheeler</option>
+                <option value="2">4 Wheeler</option>
+            </select>
+        </div>
+        <div class="input-prepend mb-2">
+            <input type="text"
+                   placeholder="color"
+                   [(ngModel)]="vehicle.color">
+        </div>
+        <div class="input-prepend mb-2">
+            <input type="text"
+                   placeholder="weight"
+                   [(ngModel)]="vehicle.weight">
+        </div>
+        <button (click)="addVehicle()">Add Vehicle</button>
+    </div>
 
-<div *ngFor="let vehicle of vehicles">
-    {{vehicle.model}}
 </div>
+
+<!-- <app-menu></app-menu> -->
+
+
+<!-- 
+
+
+<div *ngFor="let vehicle of vehicles;index as i"
+     (click)="selectVehicle(i)"
+     class="vehicle-card mb-2 selected"
+     [class.selected]="selectedVehicle==i">
+    <h6 class="text-secondary mb-2">
+        Model:
+        <span class="text-primary">
+            {{vehicle.model}}
+        </span>
+    </h6>
+    <h6 class="text-secondary mb-2">
+        Licence:
+        <span class="text-primary">
+            {{vehicle.licence}}
+        </span>
+    </h6>
+    <h6 class="text-secondary mb-2">
+        Color:
+        <span class="text-primary">
+            {{vehicle.color}}
+        </span>
+    </h6>
+</div> -->

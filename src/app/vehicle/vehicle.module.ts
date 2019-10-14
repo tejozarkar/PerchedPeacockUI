@@ -10,6 +10,7 @@ import { VehicleService } from '../shared/service/vehicle.service';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from '../shared/interceptor/http-interceptor.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpInterceptorService } from '../shared/interceptor/http-interceptor.s
     VehicleRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
   providers: [VehicleService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }, ] 

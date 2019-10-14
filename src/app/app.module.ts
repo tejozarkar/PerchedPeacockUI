@@ -18,13 +18,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './shared/components/menu/menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoaderComponent,
-    SnackbarComponent
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
